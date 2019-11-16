@@ -1,0 +1,19 @@
+bool has_cycle(SinglyLinkedListNode* head) {
+  SinglyLinkedListNode * aux1, * aux2 ;
+ aux1 = head;
+ aux2 = head;
+if ( head == NULL ){
+    return 0;
+}
+
+while (aux1 != NULL && aux1->next !=NULL){
+    aux1 = aux1->next;
+    aux2 = aux2->next->next;
+     if ( aux2 == aux1 ){
+         return 1;
+     
+     }
+}
+
+    return 0;
+}
