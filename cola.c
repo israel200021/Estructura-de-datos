@@ -1,15 +1,14 @@
 //Mendoza Rodriguez Israel 
 #include <stdio.h>
-#include <conio.h>
 #include <stdlib.h>
 
-typedef struct nodo{
+struct nodo{
 	int dato;
 	struct nodo* siguiente;
-} nodo;
+};
 
-nodo* primero = NULL;
-nodo* ultimo = NULL;
+struct nodo* primero = NULL;
+struct nodo* ultimo = NULL;
 
 void insertarNodo();
 void buscarNodo();
@@ -50,7 +49,7 @@ int main(){
 }
 
 void insertarNodo(){
-	nodo* nuevo = (nodo*) malloc(sizeof(nodo));
+	struct nodo* nuevo = (struct nodo*) malloc(sizeof(struct nodo));
 	printf(" Ingrese el dato que contendra el nuevo Nodo: ");
 	scanf("%d", &nuevo->dato);
 	if(primero == NULL){
@@ -66,7 +65,7 @@ void insertarNodo(){
 }
 
 void buscarNodo(){
-	nodo* actual = (nodo*) malloc(sizeof(nodo));
+	struct nodo* actual = (struct nodo*) malloc(sizeof(struct nodo));
 	actual = primero;
 	int nodoBuscado = 0, encontrado = 0;
 	printf(" Ingrese el valor que desea Buscar: ");
@@ -91,7 +90,7 @@ void buscarNodo(){
 }
 
 void mostrarCola(){
-	nodo* actual = (nodo*) malloc(sizeof(nodo));
+	struct nodo* actual = (struct nodo*) malloc(sizeof(struct nodo));
 	actual = primero;
 	if(primero != NULL){
 		
