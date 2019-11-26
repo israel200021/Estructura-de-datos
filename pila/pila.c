@@ -1,20 +1,21 @@
 
 #include "pila.h"
-void insertarNodo(){
-	struct nodo* nuevo = (struct nodo*) malloc(sizeof(struct nodo));
-	printf(" Ingrese el dato que contendra el nuevo Nodo: ");
-	scanf("%d", &nuevo->dato);
+struct nodo* primero = NULL;
+struct nodo *insertarNodo(struct nodo *primero,int dato){
+    struct nodo *nuevo;
+	nuevo = (struct nodo*) malloc(sizeof(struct nodo));
+	nuevo->siguiente = NULL;
+	nuevo->dato = dato;
 	nuevo->siguiente = primero;
 	primero = nuevo;
 }
 
-void buscarNodo(){
-	struct nodo* actual = (struct nodo*) malloc(sizeof(struct nodo));
+void buscarNodo(struct nodo *primero, int dato){
+    struct nodo *actual;
+	actual = (struct nodo*) malloc(sizeof(struct nodo));
 	actual = primero;
-	int nodoBuscado = 0, encontrado = 0;
-	printf(" Ingrese el dato del Nodo a Buscar: ");
-	scanf("%d", &nodoBuscado);
-	if(primero != NULL);
+	int nodoBuscado = dato, encontrado = 0;
+	if(primero != NULL){
 		while(actual != NULL){
 
 
@@ -27,6 +28,7 @@ void buscarNodo(){
 		}
 		if(encontrado == 0){
 			printf("\n Nodo no Encontrado\n\n");
+		}
 
 	}else{
 		printf("\n La pila se encuentra Vacia\n\n");
@@ -34,14 +36,12 @@ void buscarNodo(){
 }
 
 
-void eliminarNodo(){
+struct nodo * eliminarNodo(struct nodo *primero,int dato){
 	struct nodo* actual = (struct nodo*) malloc(sizeof(struct nodo));
 	actual = primero;
 	struct nodo* anterior = (struct nodo*) malloc(sizeof(struct nodo));
 	anterior = NULL;
-	int nodoBuscado = 0, encontrado = 0;
-	printf(" Ingrese el dato del Nodo a Buscar para Eliminar: ");
-	scanf("%d", &nodoBuscado);
+	int nodoBuscado = dato, encontrado = 0;
 	if(primero != NULL){
 		while(actual != NULL && encontrado != 1){
 			if(actual->dato == nodoBuscado){
@@ -66,7 +66,9 @@ void eliminarNodo(){
 	}
 }
 
-void imprimirPila(){
+
+
+void imprimirPila(struct nodo *primero){
 	struct nodo* actual = (struct nodo*) malloc(sizeof(struct nodo));
 	actual = primero;
 	if(primero != NULL){

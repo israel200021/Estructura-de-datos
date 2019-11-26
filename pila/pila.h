@@ -11,11 +11,11 @@ struct nodo{
 	struct nodo* siguiente;
 };
 
-struct nodo* primero = NULL;
 
-void insertarNodo();
-void buscarNodo();
-void eliminarNodo();
-void imprimirPila();
+struct nodo *insertarNodo(struct nodo *, int );
+void buscarNodo(struct nodo *,int);
+struct nodo * eliminarNodo(struct nodo *,int );
+void imprimirPila(struct nodo *);
+
 
 #endif
