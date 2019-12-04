@@ -17,12 +17,5 @@ void PRE(struct Arbol *);
 void IN(struct Arbol *);
 void POST(struct Arbol *);
 
-int EsHoja(struct Arbol *raiz)
-{
-	return !raiz -> izq && !raiz -> der;
-}
-int Vacio(struct Arbol *raiz)
-{
-	return raiz == NULL;
-}
+
 #endif

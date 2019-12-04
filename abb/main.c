@@ -1,4 +1,4 @@
-#include "abb.c"
+#include "abb.h"
 int main(void)
 {
 	struct Arbol *arbol = NULL;
