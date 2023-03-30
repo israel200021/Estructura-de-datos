@@ -10,5 +10,7 @@ SinglyLinkedListNode* insertNodeAtHead(SinglyLinkedListNode* llist, int data) {
         llist = nuevonodo;
     }
 
-return llist;
+return list;
 }
+
+
